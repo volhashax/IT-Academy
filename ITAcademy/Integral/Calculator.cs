@@ -1,19 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Integral
 {
-    internal class Calculator
+    public static class Calculator
     {
-        public double CalculateIntegral(Func<double, double> func)
+        public static double CalculateIntegral(Func<double, double> func, int n)
         {
-            var sInterval = 0d;
-            // for (int i = 10; i < 2; i = i + 10)
+            double a = -10;
+            double b = 10;
+            double h = (b - a) / n;
+            double sum = 0;
+
+            for (int i = 0; i <= n - 1; i++)
             {
-              sInterval = func(4);
+                sum += h * func(a + i * h);
             }
-            return sInterval;
+            return sum;
         }
+
+
     }
 }
