@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq.Expressions;
 
 namespace Integral
@@ -18,11 +19,45 @@ namespace Integral
 
                 var func = (Func<double, double>)expression.Compile();
 
-                var calc = new Calculator();
+                Stopwatch stopWatch = new Stopwatch();
 
-                var y = calc.CalculateIntegral(func);
+                //кол-во разбиений
+                int k = 2;
+                //разница значений интегралов с разным разбиением
+                double diff = 1;
 
-                Console.Write($"result f(2) = {y}");
+                double[] p = { 0.01, 0.05, 0.1 };
+
+                for (int j = 0; j < p.Length; j++)
+                {
+                    stopWatch.Start();
+
+                    int i = 0;
+                    do
+                    {
+                         i++;
+                        
+                        var sum1 = Calculator.CalculateIntegral(func, k * i);
+
+                        
+                        var sum2 = Calculator.CalculateIntegral(func, k * (i + 1));
+                        
+
+                        diff = Math.Abs(sum1 - sum2);
+                    } while (diff > p[j]);
+
+                    stopWatch.Stop();
+
+                    TimeSpan ts = stopWatch.Elapsed;
+
+                    string elapsedTime = String.Format("{0:00}.{1:00} секунд", ts.Seconds, ts.Milliseconds / 10);
+
+                    var result = Calculator.CalculateIntegral(func, k * (i + 1));
+                    Console.WriteLine($"Значение интеграла: {result}");
+                    Console.WriteLine($"Время вычисления: {elapsedTime}");
+                    Console.WriteLine($"Кол-во итераций: {k * (i + 1)}");
+                    Console.WriteLine($"Точность: {p[j]}");
+                }
             }
             catch (Exception e)
             {
