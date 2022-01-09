@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeNumber", "PrimeNumber\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParseFormula", "ParseFormula\ParseFormula.csproj", "{969D4F73-5B19-495B-AED6-0E2E45B24535}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integral", "Integral\Integral.csproj", "{7A681FF1-AB83-44D6-AC86-1689DDDB9D38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integral", "Integral\Integral.csproj", "{7A681FF1-AB83-44D6-AC86-1689DDDB9D38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "Sorting\Sorting.csproj", "{E34B9318-F383-46C0-9C58-9CADAA3E7BAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{7A681FF1-AB83-44D6-AC86-1689DDDB9D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A681FF1-AB83-44D6-AC86-1689DDDB9D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A681FF1-AB83-44D6-AC86-1689DDDB9D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E34B9318-F383-46C0-9C58-9CADAA3E7BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E34B9318-F383-46C0-9C58-9CADAA3E7BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E34B9318-F383-46C0-9C58-9CADAA3E7BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E34B9318-F383-46C0-9C58-9CADAA3E7BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
