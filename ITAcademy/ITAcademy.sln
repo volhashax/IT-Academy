@@ -9,11 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParseFormula", "ParseFormul
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integral", "Integral\Integral.csproj", "{7A681FF1-AB83-44D6-AC86-1689DDDB9D38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting", "Sorting\Sorting.csproj", "{E34B9318-F383-46C0-9C58-9CADAA3E7BAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "Sorting\Sorting.csproj", "{E34B9318-F383-46C0-9C58-9CADAA3E7BAE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transport", "Transport\Transport.csproj", "{92903CF7-65C0-4954-ABCF-CC5C5A5D2ADE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{051CAB02-FDA2-4E51-BFF8-D9A42A8C203D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92903CF7-65C0-4954-ABCF-CC5C5A5D2ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92903CF7-65C0-4954-ABCF-CC5C5A5D2ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92903CF7-65C0-4954-ABCF-CC5C5A5D2ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92903CF7-65C0-4954-ABCF-CC5C5A5D2ADE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
