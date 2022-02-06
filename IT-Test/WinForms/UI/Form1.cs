@@ -18,9 +18,12 @@ namespace WinForms
     {
         private IRepository<Question> _fileRepository;
 
-        private IEnumerable<Question> _questions;
+        private List<Question> _questions;
 
         private Question _currentQuestion;
+
+        private int _currentQuestionIndex;
+
         public Form1()
         {
             InitializeComponent();
@@ -66,8 +69,11 @@ namespace WinForms
 
         private void toolStripButtonLoad_Click(object sender, EventArgs e)
         {
-            _questions = _fileRepository.GetAll();
-            _currentQuestion = _questions.First();
+            _questions = _fileRepository.GetAll().ToList();
+            if (!_questions.Any())
+                return;
+            _currentQuestionIndex = 0;
+            
 
             SetQuestion();
 
@@ -76,6 +82,7 @@ namespace WinForms
 
         private void SetQuestion()
         {
+            _currentQuestion = _questions[_currentQuestionIndex];
             txtQuestionText.Text = _currentQuestion.Text;
 
             var i = 0;
@@ -112,7 +119,7 @@ namespace WinForms
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _fileRepository = new NullRepository();
+            _fileRepository = new FileRepository();
         }
 
         private void btnCommitAnswer_Click(object sender, EventArgs e)
@@ -133,6 +140,43 @@ namespace WinForms
                 ? "Congratulations" 
                 : "try again", 
                 _currentQuestion.Text, MessageBoxButtons.OK);
+        }
+
+        private void toolStripButtonNext_Click(object sender, EventArgs e)
+        {
+            _currentQuestionIndex++;
+
+            toolStripButtonNext.Enabled = _questions.Count > _currentQuestionIndex;
+            SetQuestion();
+
+        }
+
+        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void создатьToolStripButton_Click(object sender, EventArgs e)
+        {
+            
+            var newQuestion = new NewQuestion();
+
+            newQuestion.ShowDialog();
+
+            var question = new Question(newQuestion.QuestionText, newQuestion.Answers);
+
+            Save(question);
+
+        }
+
+        private void Save(Question question)
+        {
+            _fileRepository.Add(question);
         }
     }
 }

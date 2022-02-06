@@ -21,7 +21,21 @@ namespace WinForms.Persistance
                 new [] {
                     new Answer("Yes", true),
                     new Answer("No"),
-                    new Answer("3", true)
+                    new Answer("Not sure", true)
+                }
+                ),
+                new Question("Do you love c#?",
+                new [] {
+                    new Answer("Yes", true),
+                    new Answer("No"),
+                    new Answer("Not sure", true)
+                }
+                ),
+                new Question("How  do you do?",
+                new [] {
+                    new Answer("Yes", true),
+                    new Answer("No"),
+                    new Answer("Not sure", true)
                 }
                 )
             };
